@@ -1,7 +1,7 @@
-p {
-  color: black;
-}
-
-background {
-  color: gray;
-}
+body, button, input {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  text-align: left;
+  background-color: #F5F9F9;

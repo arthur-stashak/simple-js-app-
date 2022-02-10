@@ -1,27 +1,19 @@
 .button-class {
-  /* overwrites browser defaults and resets the border */
+  background-color: #4caf50; /* Green */
   border: none;
-
-  /* takes the font from the outer container */
-  display: inline-block;
-
-  /* takes the font from the outer container */
-  font-family: inherit;
-
-  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: #e29578ff;
   color: white;
+  padding: 16px 32px;
+  text-align: center;
   text-decoration: none;
-
-  /* adds spacing to the button (this will be discussed more in-depth later) */
-  padding: 10px;
-  border-radius: 3px;
-
-  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  -webkit-transition: 0.2s opacity;
-  -o-transition: 0.2s opacity;
-  transition: 0.2s opacity;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #4caf50;
 }
 
 body, input {

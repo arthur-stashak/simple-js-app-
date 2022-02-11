@@ -1,23 +1,14 @@
-//This creates the pokemon variables
 let pokemonRepository = (function () {
   let repository = [
     { name: 'Pikachu', type: 'electric', height: 2},
     { name: 'Charizard', type: 'fire', height: 6},
     { name: 'Squirtle', type: 'water', height: 3}
   ];
+});
 
   function add(pokemon) {
-    if (
-      typeof pokemon === 'object' &&
-      'name' in pokemon &&
-      'height' in pokemon &&
-      'type' in pokemon
-    ) {
-      repository.push(pokemon);
-    } else {
-        console.log('pokemon is not correct');
-      }
-    }
+    repository.push(pokemon);
+  }
 
   function getAll() {
     return repository;
@@ -38,12 +29,13 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     console.log()
-  }
+  };
 
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    showDetails: showDetails
   };
 })();
 

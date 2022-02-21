@@ -36,7 +36,7 @@ let pokemonRepository = (function () {
       });
     }).catch(function (e) {
       console.error(e);
-    })
+    });
   }
 
   function loadDetails(item) {
@@ -89,13 +89,8 @@ let pokemonRepository = (function () {
     let myImage = document.createElement('img');
     myImage.src = pokemon.imageUrl;
 
-    let contentElement = document.createElement('p');
-    contentElement.innerText = myImage;
-
-
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
     modalContainer.appendChild(modal);
     modal.appendChild(myImage);
   }

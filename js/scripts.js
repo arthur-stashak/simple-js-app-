@@ -15,7 +15,8 @@ let pokemonRepository = (function () {
         listPokemon.classList.add('group-list-item');
         let button = document.createElement('button');
         button.innerText = pokemon.name;
-        button.classList.add('btn-group-vertical');
+        button.classList.add('btn', 'btn-primary', 'btn-lg', 'mx-auto', 'd-block');
+
         pokemonList.appendChild(listPokemon);
         listPokemon.appendChild(button);
         button.addEventListener('click', function(event) {
@@ -56,7 +57,7 @@ let pokemonRepository = (function () {
       }
 
       function showDetails(pokemon) {
-        loadDetails(pokemon).then(function () {
+        pokemonRepository.loadDetails(pokemon).then(function () {
           showModal(pokemon);
         });
       };

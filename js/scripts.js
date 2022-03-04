@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
       let pokemonList = [];
-      let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+      let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
       function add(pokemon) {
         pokemonList.push(pokemon);
@@ -10,16 +10,16 @@ let pokemonRepository = (function () {
         return pokemonList;
       }
       function addListItem(pokemon) {
-        let pokemonList = document.querySelector('.list-group');
-        let listPokemon = document.createElement('li');
-        listPokemon.classList.add('group-list-item');
-        let button = document.createElement('button');
+        let pokemonList = document.querySelector(".list-group");
+        let listPokemon = document.createElement("li");
+        listPokemon.classList.add("group-list-item");
+        let button = document.createElement("button");
         button.innerText = pokemon.name;
-        button.classList.add('btn', 'btn-primary', 'btn-lg', 'mx-auto', 'd-block');
+        button.classList.add("btn", "btn-primary", "btn-lg", "mx-auto", "d-block");
 
         pokemonList.appendChild(listPokemon);
         listPokemon.appendChild(button);
-        button.addEventListener('click', function(event) {
+        button.addEventListener("click", function() {
           showDetails(pokemon);
         });
       }
@@ -60,20 +60,20 @@ let pokemonRepository = (function () {
         pokemonRepository.loadDetails(pokemon).then(function () {
           showModal(pokemon);
         });
-      };
+      }
 
       function showModal(item) {
-        const modalContainer = document.querySelector('#myModal');
-        const modalBody = document.querySelector('#myModal .modal-body');
-        const modalTitle = document.querySelector('#myModal .modal-title');
+        const modalContainer = document.querySelector("#myModal");
+        const modalBody = document.querySelector("#myModal .modal-body");
+        const modalTitle = document.querySelector("#myModal .modal-title");
 
-        modalContainer.classList.add('is-visible');
+        modalContainer.classList.add("is-visible");
 
-        $('#myModal').modal('show')
+        $("#myModal").modal("show")
         // Clear all existing modal content
         // modalContainer.innerHTML = '';
-        modalBody.innerHTML = '';
-        modalContainer.addEventListener('click', (e) => {
+        modalBody.innerHTML = "";
+        modalContainer.addEventListener("click", (e) => {
           // Since this is also triggered when clicking INSIDE the modal
           // We only want to close if the user clicks directly on the overlay
           let target = e.target;
@@ -82,12 +82,11 @@ let pokemonRepository = (function () {
           }
         });
 
-        let modal = document.createElement('div');
-        let container = document.querySelector('#image-container');
+        let modal = document.createElement("div");
 
-        modalTitle.innerText = item.name + (':    ') + ('height =  ') + item.height;
+        modalTitle.innerText = item.name + (":    ") + ("height =  ") + item.height;
 
-        let myImage = document.createElement('img');
+        let myImage = document.createElement("img");
         myImage.src = item.imageUrl;
 
         modal.appendChild(myImage);
@@ -96,13 +95,13 @@ let pokemonRepository = (function () {
       }
 
       function hideModal() {
-        let modalContainer = document.querySelector('#myModal');
-        modalContainer.classList.remove('is-visible');
+        let modalContainer = document.querySelector("#myModal");
+        modalContainer.classList.remove("is-visible");
       }
 
-      window.addEventListener('keydown', (e) => {
-        let modalContainer = document.querySelector('#myModal');
-        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      window.addEventListener("keydown", (e) => {
+        let modalContainer = document.querySelector("#myModal");
+        if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
           hideModal();
         }
       });
